@@ -1,38 +1,124 @@
+/* App.css */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  background-color: #0d0e10; /* Google Blue */
+  color: #fff;
+  height: 10vh; /* Google Translate nav height */
+  padding: 0 16px; /* Google Translate nav padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+footer {
+  background-color: #0d0e10; /* Google Footer Background */
+  color: white; /* Google Footer Text */
+  padding: 16px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10vh; /* Google Footer height */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.m-container {
+  background-color: #333738; /* Google White Background */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 80vh; /* Adjusting for nav and footer height */
+  padding: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.input-text {
+  height: 200px; /* Google Translate Input Textarea height */
+  width: 500px; /* Google Translate Input Textarea width */
+  margin-bottom: 16px; /* Add margin between input and output */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.output-box {
+  height: 200px; /* Google Translate Output Box height */
+  width: 500px; /* Google Translate Output Box width */
+  margin-bottom: 16px; /* Add margin between input and output */
+  border: 1px solid #dfe1e5; /* Google Box Border Color */
+  padding: 8px; /* Google Box Padding */
+  overflow-y: auto; /* Google Box Overflow */
+}
+
+textarea {
+  height: 200px; /* Google Translate Textarea height */
+  width: 500px; /* Google Translate Textarea width */
+  padding: 8px; /* Google Textarea Padding */
+  margin-bottom: 16px; /* Add margin between input and output */
+  background-color: #b4b5be;
+  color: black;
+  font-size: xx-large;
+  border-radius: 7px;
+}
+
+textarea:hover {
+  border-color: #fff;
+  color: #3468c0;
+  /* transition: border-color 0.7 ease-in-out; */
+  transition: color 0.7s ease-in-out;
+}
+
+button {
+  padding: 8px 16px; /* Google Translate Button Padding */
+  background-color: #0d0e10; /* Google Blue */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Google Button Transition */
+  border-radius: 7px;
+  height: 60px;
+  width: 120px;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: white; /* Google Button Hover Background */
+  color: black;
+  transition: background-color 0.9s ease;
+  transition: color 0.9s ease;
+}
+
+.button-container {
+  margin-top: 20px; /* Add margin between output box and button */
+}
+
+.box {
+  display: flex;
+  column-gap: 60px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #0d0e10) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
+}
+@keyframes l4 {
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
